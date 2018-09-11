@@ -1,0 +1,14 @@
+package ClassPackage;
+
+import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+
+public class WhiteBoxTests {
+
+	@Test
+	public void testAdd() {
+		UnitTesting test = new UnitTesting(15, 10);
+		Assert.assertTrue(25 == test.add());
+
+	}
+}
