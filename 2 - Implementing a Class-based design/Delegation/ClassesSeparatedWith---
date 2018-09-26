@@ -1,0 +1,76 @@
+Main method:
+-------------------------------------------------------------------------------------------------------------
+package cat;
+
+import interfacepackage.ISoundBehaviour;
+
+public class Main {
+  public static void main(String args[]) {
+          cat c = new cat();
+          // Delegation
+          c.makeSound();          // Output: Meow
+          // now to change the sound it makes
+          ISoundBehaviour newsound = new RoarSound();
+          c.setSoundBehaviour(newsound);
+          // Delegation           
+          c.makeSound();          // Output: Roar!
+  }
+}
+_____________________________________________________________________________________________________________
+-------------------------------------------------------------------------------------------------------------
+Interface:
+-------------------------------------------------------------------------------------------------------------
+package interfacepackage;
+
+public interface ISoundBehaviour {
+  
+  public void makeSound();
+}
+_____________________________________________________________________________________________________________
+-------------------------------------------------------------------------------------------------------------
+Cat Class:
+-------------------------------------------------------------------------------------------------------------
+package cat;
+
+import interfacepackage.ISoundBehaviour;
+
+public class cat {  
+  private ISoundBehaviour sound = new MeowSound();  
+
+  public void makeSound() {  
+    this.sound.makeSound();  
+  }  
+
+  public void setSoundBehaviour(ISoundBehaviour newsound) {  
+        this.sound = newsound;  
+  }  
+}
+_____________________________________________________________________________________________________________
+-------------------------------------------------------------------------------------------------------------
+RoarSound Class:
+-------------------------------------------------------------------------------------------------------------
+package cat;
+
+import interfacepackage.ISoundBehaviour;
+
+public class RoarSound implements ISoundBehaviour {
+
+  public void makeSound() {
+          System.out.println("Roar!");
+  }
+}
+_____________________________________________________________________________________________________________
+-------------------------------------------------------------------------------------------------------------
+MeowSound Class:
+-------------------------------------------------------------------------------------------------------------
+package cat;
+
+import interfacepackage.ISoundBehaviour;
+
+public class MeowSound implements ISoundBehaviour {
+
+        public void makeSound() {
+                System.out.println("Meow");
+        }
+}
+_____________________________________________________________________________________________________________
