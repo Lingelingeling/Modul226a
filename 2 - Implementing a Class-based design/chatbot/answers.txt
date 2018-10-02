@@ -1,0 +1,26 @@
+sup? - Wazzzzzzup!
+hey - Nice to see you!
+hi - Hello
+hello - Hey! How is it going?
+what are you doing - just chillin' around
+good - Good for you!
+bad - What's wrong? You wanna talk about it?
+help - To start, enter your message
+yes - Ok, I am listening...
+no - Well, it's up to you. Anything else I can help with?
+bye - Talk to you later
+i have to go - Ok, it was a pleasure to talk to you.
+goodbye - See you soon!
+what's your name? - I don't really have a name.
+how are you? - Pretty awesome, and you?
+how are you - fine, thank you.
+fine - Lucky you :)
+i'm fine - Good to hear!
+ok - O'k then
+what is your name? - I am just a ChatBot, you know
+tell me your name - It's easy. I am ChatBot.
+nope - No means no.
+i'm bored - Check out kittens, they will make you laugh :)
+why? - Because it makes sense.
+when? - Any time
+lol - Laughing makes you live longer. Anything else you want to discuss?
