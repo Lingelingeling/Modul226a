@@ -1,0 +1,99 @@
+package EMailHandler2;
+
+/**
+ * Programm to sending a message.
+ * 
+ * @author Belinda Stifani, Belinda Schühle
+ * @version 1.0
+ * @since 12.10.2018
+ *
+ * @param emailAddress
+ * @param subject
+ * @param message
+ */
+
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
+
+public class Email {
+  
+  public static void prepareEmail(String emailAddress, String subject, String message) {
+   
+    boolean empty;
+    //check Emptyness of textfields
+    empty = checkStringOfEmptiness(emailAddress);
+    if (empty == false) {
+    }else {
+      empty = checkStringOfEmptiness(subject);
+      if(empty == false) {
+      }else {
+        empty = checkStringOfEmptiness(message);
+      }
+    }
+     
+    //if all strings not empty
+   if (empty == true) {
+     //message for sending Email
+     StringBuilder text = new StringBuilder(
+         "Email: " + emailAddress + "\n"
+         + "Subject: " + subject + "\n"
+         + "Message: \n" + message
+         );
+     //popup message for sending the email (with all information)
+     final JOptionPane optionPane = new JOptionPane(text, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, new Object[]{}, null);
+     final JDialog sendMessage = new JDialog();
+     sendMessage.setTitle("Message");
+     sendMessage.setModal(true);
+     sendMessage.setContentPane(optionPane);
+     sendMessage.setResizable(false);
+     sendMessage.pack();
+     
+     //timer for closing the message box
+     Timer timer = new Timer(1500, new AbstractAction() {
+       @Override
+       public void actionPerformed(ActionEvent e) {
+         sendMessage.dispose();
+       }
+     });
+     
+     timer.setRepeats(false);
+     timer.start();
+     sendMessage.setVisible(true);
+     
+     //switch to finding the correct email address
+     switch(emailAddress) {
+       case "peter.muster@gmail.com":
+         EmailPeter.emailPeter();
+         break;
+       case "belinda.stifani@gmail.com":
+         emailBelinda.emailBelinda();
+         break;
+       case "beli.schuehle@gmail.com":
+         EmailLin.emailLin();
+         break;
+     }  
+     // if string empty
+   } else if (empty == false) {
+       // error message box appears 
+     JOptionPane.showMessageDialog(Main.frame, "Couldn't send the email:\n- missing information.");
+     }
+   }
+   
+  
+  // checking Emptiness of String
+  private static boolean checkStringOfEmptiness(String checked) {
+    boolean empty = false;
+    
+    if (checked == null || checked.equals("")) {
+      empty = false;
+    }else {
+      empty = true;
+    }
+    return empty;
+    
+  }
+}
