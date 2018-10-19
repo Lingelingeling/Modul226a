@@ -1,0 +1,25 @@
+package EMailHandler2;
+
+/**
+ * Programm to sending a message.
+ * 
+ * @author Belinda Stifani, Belinda Schühle
+ * @version 1.0
+ * @since 12.10.2018
+ *
+ */
+
+import javax.swing.JOptionPane;
+
+public class EmailPerform {
+  public static void emailPerform(String email){
+    
+    
+    //Success-Messagebox appears
+    String finishEmail =  email + " has \nreceived the message";
+    
+    JOptionPane.showMessageDialog(Main.frame, finishEmail);
+    
+    
+  }
+}
