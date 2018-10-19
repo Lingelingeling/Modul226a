@@ -1,0 +1,22 @@
+package EMailHandler2;
+
+/**
+ * Programm to sending a message.
+ * 
+ * @author Belinda Stifani, Belinda Schühle
+ * @version 1.0
+ * @since 12.10.2018
+ *
+ */
+
+public class EmailPeter {
+  
+  public static void emailPeter() {
+    
+    String emailAddress = "peter.muster@gmail.com";
+    
+    //calling function to perform the email
+    EmailPerform.emailPerform(emailAddress);
+  }
+
+}
